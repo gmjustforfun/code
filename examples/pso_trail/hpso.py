@@ -1,9 +1,9 @@
-import numpy as np
-from sko.PSO import PSO
 import math
-from sko.demo_func import sphere,rastrigrin,rosenbrock,griewank,Schaffers_f6_function
 
+import numpy as np
 
+from pso.PSO11 import PSO
+from sko.demo_func import rosenbrock
 
 "参数预设"
 # [-100,100]

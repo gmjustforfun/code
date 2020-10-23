@@ -1,6 +1,7 @@
 __version__ = '0.5.8'
 
-from . import DE, GA, PSO, SA, ACA, AFSA, IA
+from sko.pso import PSO
+from . import DE, GA, SA, ACA, AFSA, IA
 
 
 def start():

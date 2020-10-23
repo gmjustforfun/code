@@ -4,7 +4,7 @@ import numpy as np
 import math
 import pandas as pd
 import openpyxl
-from sko.PSO import PSO
+from sko.PSO11 import PSO11
 "参数预设"
 # [-100,100]
 set_lb_01 =np.ones(10)*(-100)
@@ -228,20 +228,20 @@ def cal_aver_per_iter(x):
 
 "10维，测试f1函数，"
 #
-# pso_f1_100_hists=np.zeros((100,2000))
-# pso_f6_100_hists=np.zeros((100,2000))
-# pso_f9_100_hists=np.zeros((100,2000))
-# pso_f10_100_hists=np.zeros((100,2000))
-# aver_result = np.zeros((4,4,2000))
-# for i in range(4):
-#     #对四种策略。各执行100次
-#     for test_iter in range(100):
-#         pso = PSO(func=demo_func_01_10, dim=10, pop=20, max_iter=2000,
-#               lb=set_lb_01,ub=set_ub_01, w=0.8, c1=2, c2=2)
-#         pso.run(i)
-#         print('best_x is ', pso.gbest_x, 'best_y is', pso.gbest_y)
-#         pso_f1_100_hists[test_iter][:] = pso.gbest_y_hist # 存储100次的各代结果，100*2000
-#     aver_result[0][i][:] = cal_aver_per_iter(pso_f1_100_hists)
+pso_f1_100_hists=np.zeros((100,2000))
+pso_f6_100_hists=np.zeros((100,2000))
+pso_f9_100_hists=np.zeros((100,2000))
+pso_f10_100_hists=np.zeros((100,2000))
+aver_result = np.zeros((4,4,2000))
+for i in range(4):
+    #对四种策略。各执行100次
+    for test_iter in range(100):
+        pso = PSO(func=demo_func_01_10, dim=10, pop=20, max_iter=2000,
+              lb=set_lb_01,ub=set_ub_01, w=0.8, c1=2, c2=2)
+        pso.run(1,0)
+        print('best_x is ', pso.gbest_x, 'best_y is', pso.gbest_y)
+        pso_f1_100_hists[test_iter][:] = pso.gbest_y_hist # 存储100次的各代结果，100*2000
+    aver_result[0][i][:] = cal_aver_per_iter(pso_f1_100_hists)
 # for i in range(4):
 #     #对四种策略。各执行100次
 #     for test_iter in range(100):
@@ -291,6 +291,6 @@ def cal_aver_per_iter(x):
 # df01.to_excel(writer, sheet_name='f10结果', startcol=0, index=False)
 # writer.save() # 一定要保存
 
-pso = PSO(func=demo_func_01_10, dim=10, pop=40, max_iter=1000, lb=set_lb_01, ub=set_ub_01, w=0.8, c1=2, c2=2)
+pso = PSO11(func=demo_func_01_10, dim=10, pop=40, max_iter=1000, lb=set_lb_01, ub=set_ub_01, w=0.8, c1=2, c2=2)
 pso.run(0,0)
 print(pso.gbest_y_hist)

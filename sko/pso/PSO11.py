@@ -5,8 +5,8 @@
 
 import numpy as np
 from sko.tools import func_transformer
-from .base import SkoBase
-from .operators import pso_inertia
+from base import SkoBase
+from operators import pso_inertia
 
 
 
@@ -167,7 +167,7 @@ class PSO(SkoBase):
         :return:
         '''
         r1 = np.random.rand(self.pop, self.dim)
-        r2 = np.random.rand(self.pop, self.dim) # pop*dim个【0，1】的随机数
+        r2 = np.random.rand(self.pop, self.dim)  # pop*dim个【0，1】的随机数
 
         self.V = self.w * self.V \
                  + self.cp * r1 * (self.pbest_x - self.X) \
@@ -237,14 +237,13 @@ class PSO(SkoBase):
             self.iter_num = iter_num+1
             self.cal_w(w_type)  #更新w
             self.cal_c(c_type)  # 更新加速因子c1,c2
-            self.update_V()       # 更新速度
+            self.update_V()      # 更新速度
             self.recorder()     # 做记录
             self.update_X()     # 更新X即位置
             self.cal_y()        # 计算新一代的适应值
             self.update_pbest() # 更新粒子的历史最优
             self.update_gbest() # 更新全体的历史最优
             self.gbest_y_hist.append(self.gbest_y)
-
         print(self.gbest_y_hist)
         return self
 

@@ -1,6 +1,7 @@
 # Plot particle history as animation
 import numpy as np
-from sko.PSO import PSO
+
+from sko.pso.PSO import PSO
 
 
 def demo_func(x):
