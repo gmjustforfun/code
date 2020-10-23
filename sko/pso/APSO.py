@@ -7,6 +7,7 @@ import random
 
 def sphere_tv(p):
     # Sphere函数
+
     out_put = 0
     for i in p:
         out_put += (i-5) ** 2
