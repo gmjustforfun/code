@@ -391,21 +391,21 @@ def trail02():
     # final[0, 0] = np.mean(table)
     # final[1, 0] = np.std(table)
     #
-    # i = 0
-    # for trail in range(trail_num):
-    #     pso = PSO(func=Schwefel_P222, dim=30, pop=20, max_iter=10000,
-    #               lb=np.ones(30)*(-10), ub=np.ones(30)*10, w=0.9, c1=2, c2=2)
-    #     pso.run(10000)
-    #     # print("Schs222(30) opt:", pso.gbest_y)
-    #     if(abs(pso.gbest_y - opt_functions[1]) <= opt_acceptance[1] and i<30):
-    #         table[i] = pso.gbest_y
-    #         i += 1
-    #     elif i==30:
-    #         break
-    # print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
-    # print(table)
-    # print("Schs222 30 dim 30 trails ave opt: ", np.mean(table))
-    # print("Schs222 30 dim 30 trails ave opt: ", np.std(table))
+    i = 0
+    for trail in range(trail_num):
+        pso = PSO(func=Schwefel_P222, dim=30, pop=20, max_iter=10000,
+                  lb=np.ones(30)*(-10), ub=np.ones(30)*10, w=0.9, c1=2, c2=2)
+        pso.run(10000)
+        print("Schs222(30) opt:", pso.gbest_y)
+        if(abs(pso.gbest_y - opt_functions[1]) <= opt_acceptance[1] and i<30):
+            table[i] = pso.gbest_y
+            i += 1
+        elif i==30:
+            break
+    print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+    print(table)
+    print("Schs222 30 dim 30 trails ave opt: ", np.mean(table))
+    print("Schs222 30 dim 30 trails ave opt: ", np.std(table))
     # final[0, 1] = np.mean(table)
     # final[1, 1] = np.std(table)
     #
@@ -463,21 +463,21 @@ def trail02():
     # final[0, 4] = np.mean(table)
     # final[1, 4] = np.std(table)
 
-    i = 0
-    for trail in range(trail_num):
-        pso = PSO(func=quadricNoise, dim=30, pop=20, max_iter=10000,
-                  lb=np.ones(30) * (-1.28), ub=np.ones(30) * 1.28, w=0.9, c1=2, c2=2)
-        pso.run(10000)
-        print("quadricNoise(30) opt:", pso.gbest_y)
-        if (abs(pso.gbest_y - 0) <= 10 and i < 30):
-            table[i] = pso.gbest_y
-            i += 1
-        elif i==30:
-            break
-    print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
-    print(table)
-    print("quadricNoise 30 dim 30 trails ave opt: ", np.mean(table))
-    print("quadricNoise 30 dim 30 trails ave opt: ", np.std(table))
+    # i = 0
+    # for trail in range(trail_num):
+    #     pso = PSO(func=quadricNoise, dim=30, pop=20, max_iter=10000,
+    #               lb=np.ones(30) * (-1.28), ub=np.ones(30) * 1.28, w=0.9, c1=2, c2=2)
+    #     pso.run(10000)
+    #     print("quadricNoise(30) opt:", pso.gbest_y)
+    #     if (abs(pso.gbest_y - 0) <= 10 and i < 30):
+    #         table[i] = pso.gbest_y
+    #         i += 1
+    #     elif i==30:
+    #         break
+    # print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+    # print(table)
+    # print("quadricNoise 30 dim 30 trails ave opt: ", np.mean(table))
+    # print("quadricNoise 30 dim 30 trails ave opt: ", np.std(table))
     # final[0, 5] = np.mean(table)
     # final[1, 5] = np.std(table)
     #
@@ -486,8 +486,8 @@ def trail02():
     #     pso = PSO(func=schls221, dim=30, pop=20, max_iter=10000,
     #               lb=np.ones(30) * (-100), ub=np.ones(30) * 100, w=0.9, c1=2, c2=2)
     #     pso.run(10000)
-    #     # print("Schls221(30) opt:", pso.gbest_y)
-    #     if (abs(pso.gbest_y - 0) <= 0.1 and i < 30):
+    #     print("Schls221(30) opt:", pso.gbest_y)
+    #     if (abs(pso.gbest_y - 0) <= 10 and i < 30):
     #         table[i] = pso.gbest_y
     #         i += 1
     #     elif i==30:
@@ -499,21 +499,21 @@ def trail02():
     # final[0, 6] = np.mean(table)
     # final[1, 6] = np.std(table)
     #
-    i = 0
-    for trail in range(trail_num):
-        pso = PSO(func=rastrigrin, dim=30, pop=20, max_iter=10000,
-                  lb=np.ones(30) * (-5.12), ub=np.ones(30) * 5.12, w=0.9, c1=2, c2=2)
-        pso.run(10000)
-        print("Rastrigin(30) opt:", pso.gbest_y)
-        if (abs(pso.gbest_y - 0) <= 200 and i < 30):
-            table[i] = pso.gbest_y
-            i += 1
-        elif i==30:
-            break
-    print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
-    print(table)
-    print("Rastrigin 30 dim 30 trails ave opt: ", np.mean(table))
-    print("Rastrigin 30 dim 30 trails ave opt: ", np.std(table))
+    # i = 0
+    # for trail in range(trail_num):
+    #     pso = PSO(func=rastrigrin, dim=30, pop=20, max_iter=10000,
+    #               lb=np.ones(30) * (-5.12), ub=np.ones(30) * 5.12, w=0.9, c1=2, c2=2)
+    #     pso.run(10000)
+    #     print("Rastrigin(30) opt:", pso.gbest_y)
+    #     if (abs(pso.gbest_y - 0) <= 200 and i < 30):
+    #         table[i] = pso.gbest_y
+    #         i += 1
+    #     elif i==30:
+    #         break
+    # print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+    # print(table)
+    # print("Rastrigin 30 dim 30 trails ave opt: ", np.mean(table))
+    # print("Rastrigin 30 dim 30 trails ave opt: ", np.std(table))
     # final[0, 7] = np.mean(table)
     # final[1, 7] = np.std(table)
     #
